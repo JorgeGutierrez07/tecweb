@@ -11,10 +11,12 @@ echo "<title>Una pagina llena de scripts PHP</title>";
 ?>
 </head>
 <body>
-<script language="php">
-echo "<h1> BUENO DIAS A TODOS </h1>";
+<script language="php"> 
+<?php 
+echo"<h1> BUENO DIAS A TODOS </h1>";
+?>
 </script>
-<?php
+<?php 
 echo "<h2> Titulo escrito por PHP </h2>";
 $variable2="MySQL";
 ?>
