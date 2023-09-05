@@ -26,6 +26,7 @@
     echo '<li>$var7; es valida porque inicia con una letra.</li>'; 
     echo '<li>$_element1; es valida porque inicia con guion bajo.</li>'; 
     echo '</ul>';
+    include 'Ejercicio2.php'
     ?>
 </body>
 </html>
