@@ -1,5 +1,5 @@
 <?php
-
+echo'<h2>Ejercicio2</h2>';
     $a = "ManejadorSQL";
     $b = 'MySQL';
     $c = &$a; 

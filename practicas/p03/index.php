@@ -28,6 +28,7 @@
     echo '</ul>';
     include 'Ejercicio2.php';
     include 'Ejercicio3.php';
+    include 'Ejercicio4.php';
     ?>
 </body>
 </html>
