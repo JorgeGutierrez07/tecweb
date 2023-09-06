@@ -1,15 +1,15 @@
 <?php
     echo'<h2>Ejercicio 4</h2>';
-    $a1 = "PHP5";
-    $z1[] = &$a;
-    $b1 = "5a version de PHP";
-   // $c1 = $b1*10;
-    $a1 .= $b1;
-    //$b1 *= $c1;
-    $z1[0] = "MySQL";
+    $a2 = "PHP5";
+    $z2[] = &$a2;
+    $b2 = "5a version de PHP";
+    @$c2 = $b2*10; 
+    $a2 .= $b2;
+    @$b2 *= $c2;
+    $z2[0] = "MySQL";
     function leer(){
-        global $a1, $b1, $r, $z1;
-        $r = $a1 . $b1 . var_dump($z1);
+        global $a2, $b2, $c2, $r, $z2;
+        $r = $a2 . $b2 .$c2 . var_dump($z2);
     };
     leer();
     echo"<p>Variable global:  $r</p>";
