@@ -59,6 +59,7 @@
     echo "Número de iteraciones: $iteraciones<br>";
     echo "Total de números generados: $total<br>"
     ?>
+
     <h2>Ejercicio3</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="get">
         <label for="primo">Numero</label><br>
@@ -68,16 +69,19 @@
     </form>
     <?php
     $num_encontrado = false;
-    $primo = $_GET['primo'];
-    while (!$num_encontrado) {
-        $alet = rand(1, 999);
-        $num_generados[] = $alet;
-        if ($alet % $primo == 0) {
-            $num_encontrado = true;
-            echo "Primer numero multiplo aleatorio encontrado de $primo es $alet<br>";
+    if (isset($_GET['primo'])) {
+        $primo = $_GET['primo'];
+        while (!$num_encontrado) {
+            $alet = rand(1, 999);
+            $num_generados[] = $alet;
+            if ($alet % $primo == 0) {
+                $num_encontrado = true;
+                echo "Primer numero multiplo aleatorio encontrado de $primo es $alet<br>";
+            }
         }
+        echo implode(", ", $num_generados);
     }
-    echo implode(", ", $num_generados);
+
     ?>
     <h2>Ejercicio3 variante do while</h2>
     <?php
@@ -95,7 +99,7 @@
         echo implode(", ", $num_generados1);
     }
     ?>
-    <h2>Ejercicio4</h2>
+    <h2>Ejercicio 4</h2>
     <p>
         Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la a
         a la z. Usa la función chr(n) que devuelve el caracter cuyo código ASCII es n para poner
@@ -119,6 +123,34 @@
     echo '</tr>';
     echo '</table>';
     ?>
+    <h2>Ejercicio 5</h2>
+    <p>
+        Usar las variables $edad y $sexo en una instrucción if para identificar una persona de
+        sexo “femenino”, cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de
+        bienvenida apropiado.
+    </p>
+    <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
+        <label for="edad">Edad</label>
+        <br>
+        <input type="number" name="edad">
+        <br>
+        <input type="radio" name="genero" value="Femenino">Mujer
+        <br>
+        <input type="radio" name="genero" value="Masculino">Hombre
+        <br>
+        <input type="submit">
+
+        <?php
+        if (isset($_POST['edad'], $_POST['genero'])) {
+            $edad = $_POST['edad'];
+            $genero = $_POST['genero'];
+            if ($edad >= 18 && $edad <= 35 && $genero == 'Femenino') {
+                echo 'Bienvenida usted esta entre el rango de edad permitido';
+            } else {
+                echo 'No esta permitida debido al rango de edad';
+            }
+        }
+        ?>
 </body>
 
 </html>
