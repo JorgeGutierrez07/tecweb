@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.1//EN”
+“http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd”>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang=“es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Practica 4 </title>
 <html lang="en">
 
 <head>
@@ -90,5 +95,32 @@
         echo implode(", ", $num_generados1);
     }
     ?>
-
+<h2>Ejercicio4</h2>
+<p>
+Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la a
+a la z. Usa la función chr(n) que devuelve el caracter cuyo código ASCII es n para poner
+el valor en cada índice. Es decir:
+</p>
+<?php
+for($i=97; $i<=122; $i++){
+    $conversor = chr($i);
+    $abc[$i] = $conversor;
+}
+echo '<table style="border-collapse :collapse;">';
+echo'<tr>';
+foreach($abc as $key => $value)
+{
+    echo'<th style = "border: 1px solid;">'.$key;
+}
+echo'</tr>';
+echo'<tr>';
+foreach($abc as $key => $value)
+{
+    echo'<th style = "border: 1px solid;">'.$value;
+}
+echo'</tr>';
+echo '</table>';
+?>
+</body>
 </html>
+ 
