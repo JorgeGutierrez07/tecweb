@@ -6,10 +6,6 @@
     <title> Practica 4 </title>
     <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Práctica 4</title>
     </head>
 
 <body>
@@ -25,8 +21,7 @@
 
     //Inclusion de funciones de soluciones de problemas
     include 'funciones.php';
-    include 'Ejercicio5y6.php';
-
+    include 'Ejercicio5.php';
 
     if (isset($_GET['numero'])) {
         $num = $_GET['numero'];
@@ -40,13 +35,13 @@
     ejer2();
     ?>
 
-    <h2>Ejercicio3</h2>
+    <h2>Ejercicio3</h2> 
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="get">
         <label for="primo">Numero</label><br>
         <input type="number" name="primo">
         <input type="submit">
         <br>
-    </form>
+    </form> 
     <?php
     $num_encontrado = false;
     if (isset($_GET['primo'])) {
@@ -78,7 +73,7 @@
         sexo “femenino”, cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de
         bienvenida apropiado.
     </p>
-    <form action="http://localhost/tecweb/practicas/p04/Ejercicio5y6.php" method="post">
+    <form action="http://localhost/tecweb/practicas/p04/Ejercicio5.php" method="post">
         <label for="edad">Edad</label>
         <br>
         <input type="number" name="edad">
@@ -88,16 +83,26 @@
         <input type="radio" name="genero" value="Masculino">Hombre
         <br>
         <input type="submit">
+        </form>
 
         <h2>Ejercicio 6</h2>
         <p>
             Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de
             una ciudad. Cada vehículo debe ser identificado por:
         </p>
-        <?php
-        if (isset($_POST['matricula'], $_POST[''])) {
-        }
-        ?>
+
+ <form action="http://localhost/tecweb/practicas/p04/form6.php" method= "post">
+        <label for="matricula">Ingresa la matricula a buscar</label>
+        <input type="search" name="matricula">
+
+        <input type="submit" value="Buscar">
+        
+        <input type="button" value="Muestra todos los datos" name= "todo">
+    </form>
+
+    <form action="http://localhost/tecweb/practicas/p04/form6pt2.php">
+        <input type="submit" value="Muestra todos los datos" name= "todo">
+        </form>
 </body>
 
 </html>
