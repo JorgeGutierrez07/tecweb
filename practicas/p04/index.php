@@ -22,42 +22,22 @@
         <br>
     </form>
     <?php
+
+    //Inclusion de funciones de soluciones de problemas
+    include 'funciones.php';
+    include 'Ejercicio5y6.php';
+
+
     if (isset($_GET['numero'])) {
         $num = $_GET['numero'];
-        if ($num % 5 == 0 && $num % 7 == 0) {
-            echo '<h3>R= El número ' . $num . ' SÍ es múltiplo de 5 y 7.</h3>';
-        } else {
-            echo '<h3>R= El número ' . $num . ' NO es múltiplo de 5 y 7.</h3>';
-        }
+        ejer1($num);
     }
     ?>
     <h2>Ejercicio 2</h2>
     <p>Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una
         secuencia compuesta por:</p>
     <?php
-    $aleatorio = array();
-    $banderitas = true;
-    $total = 0;
-    $iteraciones = 0;
-
-    while ($banderitas) {
-        $numero1 = rand(1, 30);
-        $numero2 = rand(1, 30);
-        $numero3 = rand(1, 30);
-        $iteraciones++;
-        $total += 3;
-
-        $aleatorio[] = [$numero1, $numero2, $numero3];
-
-        if ($numero1 % 2 != 0 && $numero2 % 2 == 0 && $numero3 % 2 != 0) {
-            $banderitas = false;
-        }
-    }
-    foreach ($aleatorio as $fila) {
-        echo implode("  ", $fila) . "<br>";
-    }
-    echo "Número de iteraciones: $iteraciones<br>";
-    echo "Total de números generados: $total<br>"
+    ejer2();
     ?>
 
     <h2>Ejercicio3</h2>
@@ -71,15 +51,7 @@
     $num_encontrado = false;
     if (isset($_GET['primo'])) {
         $primo = $_GET['primo'];
-        while (!$num_encontrado) {
-            $alet = rand(1, 999);
-            $num_generados[] = $alet;
-            if ($alet % $primo == 0) {
-                $num_encontrado = true;
-                echo "Primer numero multiplo aleatorio encontrado de $primo es $alet<br>";
-            }
-        }
-        echo implode(", ", $num_generados);
+        ejer3($num_encontrado, $primo);
     }
 
     ?>
@@ -88,15 +60,7 @@
     if (isset($_GET['primo'])) {
         $num_encontrado1 = false;
         $primo1 = $_GET['primo'];
-        do {
-            $alet1 = rand(1, 999);
-            $num_generados1[] = $alet1;
-            if ($alet1 % $primo1 == 0) {
-                $num_encontrado1 = true;
-            }
-        } while (!$num_encontrado1);
-        echo "Primer numero multiplo aleatorio encontrado de $primo1 es $alet1<br>";
-        echo implode(", ", $num_generados1);
+        ejer3do($primo1, $num_encontrado1);
     }
     ?>
     <h2>Ejercicio 4</h2>
@@ -106,22 +70,7 @@
         el valor en cada índice. Es decir:
     </p>
     <?php
-    for ($i = 97; $i <= 122; $i++) {
-        $conversor = chr($i);
-        $abc[$i] = $conversor;
-    }
-    echo '<table style="border-collapse :collapse;">';
-    echo '<tr>';
-    foreach ($abc as $key => $value) {
-        echo '<th style = "border: 1px solid;">' . $key;
-    }
-    echo '</tr>';
-    echo '<tr>';
-    foreach ($abc as $key => $value) {
-        echo '<th style = "border: 1px solid;">' . $value;
-    }
-    echo '</tr>';
-    echo '</table>';
+    ejer4();
     ?>
     <h2>Ejercicio 5</h2>
     <p>
@@ -129,7 +78,7 @@
         sexo “femenino”, cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de
         bienvenida apropiado.
     </p>
-    <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
+    <form action="http://localhost/tecweb/practicas/p04/Ejercicio5y6.php" method="post">
         <label for="edad">Edad</label>
         <br>
         <input type="number" name="edad">
@@ -140,15 +89,13 @@
         <br>
         <input type="submit">
 
+        <h2>Ejercicio 6</h2>
+        <p>
+            Crea en código duro un arreglo asociativo que sirva para registrar el parque vehicular de
+            una ciudad. Cada vehículo debe ser identificado por:
+        </p>
         <?php
-        if (isset($_POST['edad'], $_POST['genero'])) {
-            $edad = $_POST['edad'];
-            $genero = $_POST['genero'];
-            if ($edad >= 18 && $edad <= 35 && $genero == 'Femenino') {
-                echo 'Bienvenida usted esta entre el rango de edad permitido';
-            } else {
-                echo 'No esta permitida debido al rango de edad';
-            }
+        if (isset($_POST['matricula'], $_POST[''])) {
         }
         ?>
 </body>
