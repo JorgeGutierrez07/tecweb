@@ -12,7 +12,7 @@ function validar(finalJSON) {
 
   var nom = /^[a-zA-Z0-9\s]+$/;
   var model = /^[-a-zA-Z\s]+$/;
-  var marca = /^[-a-zA-Z\s]+$/;
+  var mar = /^[-a-zA-Z\s]+$/;
   var prec = /^[0-9,.]+$/;
   var deta = /^[a-zA-Z0-9.%:,\s]+$/;
   var uni = /^[0-9\s]+$/;
@@ -21,8 +21,9 @@ function validar(finalJSON) {
   if (!nom.test(nombre) || nombre.length > 100) {
     alert("Nombre mal escrito o mayor a 100 caracteres");
     valida = false;
-  } else if (!marca.test(marca)) {
-    alert("Campo mal escrito o vacio");
+  } else if (!mar.test(marca)) {
+    alert("Campo marca mal escrito o vacio");
+    valida = false;
   } else if (!model.test(modelo) && modelo.length <= 25) {
     alert("Campo modelo mal escrito o sobrepasado");
     valida = false;
@@ -47,7 +48,7 @@ function validar(finalJSON) {
 var baseJSON = {
   precio: 0.0,
   unidades: 1,
-  modelo: "XX-000",
+  modelo: "XX",
   marca: "NA",
   detalles: "NA",
   imagen: "img/default.png",
@@ -129,6 +130,9 @@ function agregarProducto(e) {
       // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
       if (client.readyState == 4 && client.status == 200) {
         console.log(client.responseText);
+        let verificado = JSON.parse(client.responseText);
+        
+        alert(verificado.mensaje);
       }
     };
     client.send(productoJsonString);
