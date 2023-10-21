@@ -24,6 +24,8 @@ $(document).ready(function () {
   $("#search").keyup(function (e) {
     if ($("#search").val()) {
       let search = $("#search").val();
+
+
       $.ajax({
         url: "http://localhost:3000/practicas/p09/p09_con_jquery/product_app/backend/product_search.php",
         type: "GET",
@@ -45,12 +47,12 @@ $(document).ready(function () {
                                 <td>${producto.unidades}</td>
                                 <td>
                                 </tr>
-                                `;
+                                `
           });
 
           $("#products").html(template);
           $("#product-result").show();
-        },
+        }
       });
     }
   });
@@ -69,6 +71,7 @@ $(document).ready(function () {
 
     console.log(postData);
     productoJsonString = JSON.stringify(postData, null, 2);
+
     $.post(
       "http://localhost:3000/practicas/p09/p09_con_jquery/product_app/backend/product-add.php",
       productoJsonString,
@@ -83,18 +86,19 @@ $(document).ready(function () {
                     <li style="list-style: none;">message: ${respuesta.message}</li>`;
         $("#product-result").attr("class", "card my-4 d-block");
         $("#container").html(template_bar);
-      }
-    );
+      });
+    e.preventDefault();
   });
 
   function fetchProducts() {
     $.ajax({
-      type: "post",
       url: "backend/product-list.php",
+      type: "post",
       success: function (response) {
         let prods = JSON.parse(response);
         let template = '';
-        prods.forEach((prod) => {
+
+        prods.forEach(prod => {
           template += `
                 <tr productId="${prod.id}">
                 <td>${prod.id}</td>
@@ -103,7 +107,7 @@ $(document).ready(function () {
                 </td>
                 <td>${prod.marca}</td>
                 <td>${prod.modelo}</td>
-                <td>$${prod.precio}</td>
+                <td>${prod.precio}</td>
                 <td>${prod.detalles}</td>
                 <td>${prod.unidades}</td>
                 <td>
@@ -112,17 +116,17 @@ $(document).ready(function () {
                     </button>
                 </td>
             </tr>
-                `;
+                `
         });
-        $("#products").html(template);
-      },
+        $('#products').html(template);
+      }
     });
   }
   $(document).on("click", ".product-delete", function () {
     if (confirm("¿Quieres eliminar el producto?")) {
       const element = $(this)[0].parentElement.parentElement;
       const id = $(element).attr("productId");
-      $.post("backend/product-delete.php", { id }, function (response) {
+      $.get("backend/product-delete.php", { id }, function (response) {
         let respuesta = JSON.parse(response);
         console.log(respuesta);
         fetchProducts();
@@ -131,29 +135,4 @@ $(document).ready(function () {
       });
     }
   });
-  //Funcion para editar el producto
-  $(document).on("click", ".product-edit", function () {
-    let element = $(this)[0].parentElement.parentElement;
-    let id = $(element).attr("productId");
-    //console.log(id);
-    $.post("backend/product-edit.php", { id }, function (response) {
-      const producto = JSON.parse(response);
-      console.log(response);
-      $("#name").val(producto.nombre);
-      $("#product_Id").val(producto.id);
-
-      var atributosobj = {
-        precio: producto.precio,
-        unidades: producto.unidades,
-        modelo: producto.modelo,
-        marca: producto.marca,
-        detalles: producto.detalles,
-        imagen: producto.imagen,
-      };
-
-      var objstring = JSON.stringify(atributosobj, null, 2);
-      $("#description").val(objstring);
-      edit = true;
-    });
-  });
-});
+})
