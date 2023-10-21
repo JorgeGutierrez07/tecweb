@@ -20,11 +20,11 @@ function init() {
 }
 
 $(document).ready(function () {
+  let edit = false;
   fetchProducts();
   $("#search").keyup(function (e) {
     if ($("#search").val()) {
       let search = $("#search").val();
-
 
       $.ajax({
         url: "http://localhost:3000/practicas/p09/p09_con_jquery/product_app/backend/product_search.php",
@@ -47,12 +47,12 @@ $(document).ready(function () {
                                 <td>${producto.unidades}</td>
                                 <td>
                                 </tr>
-                                `
+                                `;
           });
 
           $("#products").html(template);
           $("#product-result").show();
-        }
+        },
       });
     }
   });
@@ -67,13 +67,15 @@ $(document).ready(function () {
       marca: finalJSON["marca"],
       detalles: finalJSON["detalles"],
       imagen: finalJSON["imagen"],
+      id: $('#productId').val()
     };
 
     console.log(postData);
     productoJsonString = JSON.stringify(postData, null, 2);
-
+    let url = edit === false ? 'http://localhost:3000/practicas/p09/p09_con_jquery/product_app/backend/product-add.php' : 'http://localhost:3000/practicas/p09/p09_con_jquery/product_app/backend/product-edit.php';
+   console.log(url);
     $.post(
-      "http://localhost:3000/practicas/p09/p09_con_jquery/product_app/backend/product-add.php",
+      url,
       productoJsonString,
       function (response) {
         fetchProducts();
@@ -86,7 +88,8 @@ $(document).ready(function () {
                     <li style="list-style: none;">message: ${respuesta.message}</li>`;
         $("#product-result").attr("class", "card my-4 d-block");
         $("#container").html(template_bar);
-      });
+      }
+    );
     e.preventDefault();
   });
 
@@ -96,9 +99,9 @@ $(document).ready(function () {
       type: "post",
       success: function (response) {
         let prods = JSON.parse(response);
-        let template = '';
+        let template = "";
 
-        prods.forEach(prod => {
+        prods.forEach((prod) => {
           template += `
                 <tr productId="${prod.id}">
                 <td>${prod.id}</td>
@@ -116,10 +119,10 @@ $(document).ready(function () {
                     </button>
                 </td>
             </tr>
-                `
+                `;
         });
-        $('#products').html(template);
-      }
+        $("#products").html(template);
+      },
     });
   }
   $(document).on("click", ".product-delete", function () {
@@ -135,4 +138,29 @@ $(document).ready(function () {
       });
     }
   });
-})
+  $(document).on("click", ".product-item", function () {
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr("productId");
+    $.post(
+      "http://localhost:3000/practicas/p09/p09_con_jquery/product_app/backend/product-single.php",
+      { id },
+      function (response) {
+        const producto = JSON.parse(response);
+        $("#name").val(producto.nombre);
+        $("productId").val(producto.id);
+        var editaJSON = {
+          precio: producto.precio,
+          unidades: producto.unidades,
+          marca: producto.marca,
+          modelo: producto.modelo,
+          detalles: producto.detalles,
+          unidades: producto.unidades,
+          imagen: producto.imagen,
+        };
+        $("#description").val((editaJSON = JSON.stringify(editaJSON, null, 2)));
+        $('#productId').val(producto.id);
+        edit = true;
+      }
+    );
+  });
+});
