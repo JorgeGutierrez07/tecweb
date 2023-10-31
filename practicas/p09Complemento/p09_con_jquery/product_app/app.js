@@ -64,7 +64,7 @@ $(document).ready(function () {
       $("#error_marca").css("display", "block");
       marca_valido = false;
     } else {
-      $("#error_nombre").css("display", "none");
+      $("#error_marca").css("display", "none");
       marca_valido = true;
     }
   });
