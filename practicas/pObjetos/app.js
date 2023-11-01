@@ -136,7 +136,7 @@ $(document).ready(function () {
       console.log(name);
       $.ajax({
         type: "GET",
-        url: "http://localhost:3000/practicas/p09Complemento/p09_con_jquery/product_app/backend/product-insertbyname.php",
+        url: "http://localhost:3000/practicas/pObjetos/backend/product-insertbyname.php",
         data: { name },
         success: function (response) {
           console.log(response);
@@ -161,7 +161,7 @@ $(document).ready(function () {
     var validado_total = true;
     validado_total = nombre_valido && precio_valido && unidades_valido && modelo_valido && marca_valido && detalles_valido && img_valido;
     console.log(validado_total);
-    if (validado !=validado_total) {
+    if (validado !=validado_total || editar == true) {
       var productoJSON = {
       marca: $("#marca").val(),
       modelo: $("#modelo").val(),
@@ -177,8 +177,8 @@ $(document).ready(function () {
 
     let url =
       editar === false
-        ? "http://localhost:3000/practicas/p09Complemento/p09_con_jquery/product_app/backend/product-add.php"
-        : "http://localhost:3000/practicas/p09Complemento/p09_con_jquery/product_app/backend/product-edit.php";
+        ? "http://localhost:3000/practicas/pObjetos/backend/product-add.php"
+        : "http://localhost:3000/practicas/pObjetos/backend/product-edit.php";
     console.log(url);
 
     $.post(url, productoJsonString, function (response) {
@@ -240,6 +240,13 @@ $(document).ready(function () {
         fetchProducts();
         let mensaje = respuesta.message;
         alert(mensaje);
+        let template_bar = "";
+        template_bar += `
+                          <li style="list-style: none;">status: ${respuesta.status} </li>
+                          <li style="list-style: none;">message: ${respuesta.message } </li>
+                      `;
+        $("#product-result").attr("class", "card my-4 d-block");
+        $("#container").html(template_bar);
       });
     }
   });
@@ -247,11 +254,10 @@ $(document).ready(function () {
     let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr("productId");
     $.post(
-      "http://localhost:3000/practicas/p09Complemento/p09_con_jquery/product_app/backend/product-single.php",
+      "http://localhost:3000/practicas/pObjetos/backend/product-single.php",
       { id },
       function (response) {
         const producto = JSON.parse(response);
-        $("#name").val(producto.nombre);
         $("#name").val(producto.nombre);
         $("#marca").val(producto.marca);
         $("#modelo").val(producto.modelo);
