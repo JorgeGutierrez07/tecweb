@@ -200,12 +200,14 @@ $(document).ready(function () {
 
   function fetchProducts() {
     $.ajax({
-      url: "backend/product-list.php",
-      type: "post",
+      url: "http://localhost:3000/practicas/pObjetos/backend/product-list.php",
+      type: "GET",
       success: function (response) {
         let prods = JSON.parse(response);
+        console.log(prods);
+        if (Object.keys(prods).length > 0) {
+        
         let template = "";
-
         prods.forEach((prod) => {
           template += `
                 <tr productId="${prod.id}">
@@ -227,6 +229,7 @@ $(document).ready(function () {
                 `;
         });
         $("#products").html(template);
+        }
       },
     });
   }
@@ -253,7 +256,7 @@ $(document).ready(function () {
   $(document).on("click", ".product-item", function () {
     let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr("productId");
-    $.post(
+    $.get(
       "http://localhost:3000/practicas/pObjetos/backend/product-single.php",
       { id },
       function (response) {

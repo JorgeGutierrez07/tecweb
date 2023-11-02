@@ -1,5 +1,13 @@
 <?php
-include("database.php");
+use API\backend\Productos;
+
+require_once __DIR__ ."/API/Productos.php";
+
+$single = new Productos();
+$single->single($_GET['id']);
+echo $single->getResponse();
+
+/*include("database.php");
 
 $id = $_POST["id"];
 $query = "SELECT * FROM productos WHERE id =$id";
@@ -21,4 +29,5 @@ while ($row = mysqli_fetch_array($result)) {
     );
 }
 $jsonstring = json_encode($json[0]);
-echo $jsonstring;
+echo $jsonstring;*/
+?>

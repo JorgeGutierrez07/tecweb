@@ -1,5 +1,13 @@
 <?php
-    include_once __DIR__.'/database.php';
+
+use API\backend\Productos;
+
+require_once __DIR__ ."/API/Productos.php";
+
+$busca = new Productos();
+$busca->search($_GET['search']);
+echo $busca->getResponse();
+   /* include_once __DIR__.'/database.php';
 
     // SE CREA EL ARREGLO QUE SE VA A DEVOLVER EN FORMA DE JSON
     $data = array();
@@ -28,5 +36,5 @@
     } 
     
     // SE HACE LA CONVERSIÓN DE ARRAY A JSON
-    echo json_encode($data, JSON_PRETTY_PRINT);
+    echo json_encode($data, JSON_PRETTY_PRINT);*/
 ?>
