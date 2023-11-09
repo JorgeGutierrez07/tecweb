@@ -15,7 +15,7 @@ $(document).ready(function () {
       let search = $("#search").val();
 
       $.ajax({
-        url: "http://localhost:3000/practicas/p09Complemento/p09_con_jquery/product_app/backend/product_search.php",
+        url: "http://localhost:3000/practicas/p10/backend/product_search.php",
         type: "GET",
         data: { search },
         success: function (response) {
@@ -136,7 +136,7 @@ $(document).ready(function () {
       console.log(name);
       $.ajax({
         type: "GET",
-        url: "http://localhost:3000/practicas/pObjetos/backend/product-insertbyname.php",
+        url: "http://localhost:3000/practicas/p10/backend/product-insertbyname.php",
         data: { name },
         success: function (response) {
           console.log(response);
@@ -177,8 +177,8 @@ $(document).ready(function () {
 
     let url =
       editar === false
-        ? "http://localhost:3000/practicas/pObjetos/backend/product-add.php"
-        : "http://localhost:3000/practicas/pObjetos/backend/product-edit.php";
+        ? "http://localhost:3000/practicas/p10/backend/product-add.php"
+        : "http://localhost:3000/practicas/p10/backend/product-edit.php";
     console.log(url);
 
     $.post(url, productoJsonString, function (response) {
@@ -200,7 +200,7 @@ $(document).ready(function () {
 
   function fetchProducts() {
     $.ajax({
-      url: "http://localhost:3000/practicas/pObjetos/backend/product-list.php",
+      url: "http://localhost:3000/practicas/p10/backend/product-list.php",
       type: "GET",
       success: function (response) {
         let prods = JSON.parse(response);
@@ -257,7 +257,7 @@ $(document).ready(function () {
     let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr("productId");
     $.get(
-      "http://localhost:3000/practicas/pObjetos/backend/product-single.php",
+      "http://localhost:3000/practicas/p10/backend/product-single.php",
       { id },
       function (response) {
         const producto = JSON.parse(response);

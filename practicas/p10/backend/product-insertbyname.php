@@ -3,7 +3,7 @@ use API\Leer\Leer;
 
 require_once __DIR__ ."/API/start.php";
 
-$singleby = new $singleby();
+$singleby = new Leer();
 $singleby->singleByName($_GET['name']);
 echo $singleby->getResponse();
 

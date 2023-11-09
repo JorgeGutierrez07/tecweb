@@ -1,10 +1,10 @@
 <?php
 
-use API\backend\Productos;
+use API\Leer\Leer;
 
-require_once __DIR__ ."/API/Productos.php";
+require_once __DIR__ ."/API/start.php";
 
-$busca = new Productos();
+$busca = new Leer();
 $busca->search($_GET['search']);
 echo $busca->getResponse();
    /* include_once __DIR__.'/database.php';
