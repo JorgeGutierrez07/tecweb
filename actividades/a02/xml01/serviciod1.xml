@@ -1,0 +1,113 @@
+<CatalogoVOD>
+    <cuenta>
+        <correo>jorgeandresgut0212@gmail.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Jorge</usuario>
+                <idioma>Espanol</idioma>
+            </perfil>
+            <perfil>
+                <usuario>Luis</usuario>
+                <idioma>Espanol</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>Blade Runner 2049</nombre>
+                    <duracion>2 horas 43 minutos</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Sector 9</nombre>
+                    <duracion>1 horas 52 minutos</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Akira</nombre>
+                    <duracion>2 horas 4 minutos</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>El senor de la guerra</nombre>
+                    <duracion>2 horas 3 minutos</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Accion</nombre>
+                <titulo>
+                    <nombre>Gran Turismo</nombre>
+                    <duracion>2 horas 15 minutos</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Blue Beetle</nombre>
+                    <duracion>2 horas 7 minutos</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Rush</nombre>
+                    <duracion>2 horas 3 minutos</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Ready player one</nombre>
+                    <duracion>2 horas 20 minutos</duracion>
+                </titulo>
+            </genero>
+
+
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>Ted Laso</nombre>
+                    <duracion>3 temporadas</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Padre de Familia</nombre>
+                    <duracion>22 temporadas</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Futurama</nombre>
+                    <duracion>8 temporadas</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Seinfield</nombre>
+                    <duracion>9 temporadas</duracion>
+                </titulo>
+            </genero>
+
+            <genero>
+                <nombre>Ciencia ficcion</nombre>
+                <titulo>
+                    <nombre>Love Death + </nombre>
+                    <duracion>3 temporadas</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Cowboy Bebop</nombre>
+                    <duracion>1 temporadas</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Invencible</nombre>
+                    <duracion>2 temporadas</duracion>
+                </titulo>
+
+                <titulo>
+                    <nombre>Invasor Zim</nombre>
+                    <duracion>2 temporadas</duracion>
+                </titulo>
+            </genero>
+
+        </programas>
+    </contenido>
+</CatalogoVOD>

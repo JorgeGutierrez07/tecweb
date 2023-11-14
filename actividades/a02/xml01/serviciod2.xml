@@ -1,0 +1,36 @@
+<CatalogoVOD>
+    <cuenta correo="jorgeandresgut0212@gmail.com">
+        <perfil usuario="Jorge" idioma="Espanol"/>
+        <perfil usuario="Luis" idioma="Espanol"/>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Drama">
+                <titulo nombre="Blade Runner 2049" duracion="2 horas 43 minutos"/>
+                <titulo nombre="Sector 9" duracion="1 horas 52 minutos"/>
+                <titulo nombre="Akira" duracion="2 horas 4 minutos"/>
+                <titulo nombre="El senor de la guerra" duracion="2 horas 3 minutos"/>
+            </genero>
+            <genero nombre="Accion">
+                <titulo nombre="Gran Turismo" duracion="2 horas 15 minutos"/>
+                <titulo nombre="Blue Beetle" duracion="2 horas 7 minutos"/>
+                <titulo nombre="Rush" duracion="2 horas 3 minutos"/>
+                <titulo nombre="Ready player one" duracion="2 horas 20 minutos"/>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Comedia">
+                <titulo nombre="Ted Laso" duracion="3 temporadas"/>
+                <titulo nombre="Padre de Familia" duracion="22 temporadas"/>
+                <titulo nombre="Futurama" duracion="8 temporadas"/>
+                <titulo nombre="Seinfield" duracion="9 temporadas"/>
+            </genero>
+            <genero nombre="Ciencia ficcion">
+                <titulo nombre="Love Death + Robots" duracion="3 temporadas"/>
+                <titulo nombre="Cowboy Bebop" duracion="1 temporada"/>
+                <titulo nombre="Invencible" duracion="2 temporadas"/>
+                <titulo nombre="Invasor Zim" duracion="2 temporadas"/>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
