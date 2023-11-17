@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod_ep.dtd"[]>
+<CatalogoVOD>
+    <cuenta correo="jorgeandresgut0212@gmail.com">
+        <perfiles>
+            <perfil usuario="Jorge"
+                    idioma="Espanol" />
+            <perfil usuario="Luis"
+                    idioma="Espanol" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="MEX">
+            <genero nombre="Drama">
+                <titulo duracion="2 horas 40 minutos">
+                    <nombre>
+                        Blade Runner 2049
+                    </nombre>
+                </titulo>
+                <titulo duracion="1 horas 52 minutos">
+                    <nombre>
+                        Sector 9
+                    </nombre>
+                </titulo>
+                <titulo duracion="2 horas 3 minutos">
+                    <nombre>
+                        El senor de la guerra
+                    </nombre>
+                </titulo>
+                <titulo duracion="2 horas 4 minutos">
+                    <nombre>
+                        Akira
+                    </nombre>
+                </titulo>
+            </genero>
+            <genero nombre="Accion">
+                <titulo duracion="2 horas 15 minutos">
+                    <nombre>
+                        Gran Turismo
+                    </nombre>
+                </titulo>
+                <titulo duracion="2 horas 7 minutos">
+                    <nombre>
+                        Blue Beetle
+                    </nombre>
+                </titulo>
+                <titulo duracion="2 horas 3 minutos">
+                    <nombre>
+                        Rush
+                    </nombre>
+                </titulo>
+                <titulo duracion="2 horas 20 minutos">
+                    <nombre>
+                        Ready player one
+                    </nombre>
+                </titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Comedia">
+                <titulo duracion="3 temporadas">
+                    <nombre>
+                        Ted Laso
+                    </nombre>
+                </titulo>
+                <titulo duracion="22 temporadas">
+                    <nombre>
+                        Padre de Familia
+                    </nombre>
+                </titulo>
+                <titulo duracion="9 temporadas">
+                    <nombre>
+                        Seinfield
+                    </nombre>
+                </titulo>
+            </genero>
+            <genero nombre="Ciencia ficcion">
+                <titulo duracion="3 temporadas">
+                    <nombre>"Love Death + Robots"</nombre>
+                </titulo>
+                <titulo duracion="1 temporada">
+                    <nombre>"Cowboy Bebop"</nombre>
+                </titulo>
+                <titulo duracion="2 temporadas">
+                    <nombre>"Invasor Zim"</nombre>
+                </titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+
+<cinefanatico>
+
+<tarjeta noserie="12345678" visitas="10" puntos="1000">
+
+    <nombre>Jorge Gutierrez</nombre>
+    <correo>jorgeandres@gmail.com</correo>
+    <telefono tipo="movil">2462080877</telefono>
+</tarjeta>
+
+<tarjeta noserie="09876543" visitas="11" puntos="1001">
+
+    <nombre>Alejandro</nombre>
+    <correo>alejandro@gmail.com</correo>
+    <telefono tipo="movil">2461234567</telefono>
+</tarjeta>
+<tarjeta noserie="34534523" visitas="12" puntos="1002">
+
+    <nombre>Hector</nombre>
+    <correo>hector@gmail.com</correo>
+    <telefono tipo="movil">2224535678</telefono>
+</tarjeta>
+<tarjeta noserie="223423432" visitas="13" puntos="1003">
+
+    <nombre>Alfredo</nombre>
+    <correo>alfredo@gmail.com</correo>
+    <telefono tipo="movil">5524645678</telefono>
+</tarjeta>
+
+</cinefanatico>
