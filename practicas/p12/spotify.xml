@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="spotify_v2.xsd">
+<cuenta id="1" plan="universitario" fechaFin="07/12/2023" fechaIni="04/04/2023">
+    <nombre>Jorge</nombre>
+    <correo>jorge@gmail.com</correo>
+    <telefono tipo="movil">2462080877</telefono>
+</cuenta>
+
+<cuenta id="2" plan="premium" fechaIni="09/09/2023" fechaFin="09/09/2024">
+    <nombre>Daniel</nombre>
+    <correo>daniel@gmail.com</correo>
+    <telefono tipo="casa">2462340317</telefono>
+</cuenta>
+
+</spotify>
